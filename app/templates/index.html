@@ -9,14 +9,19 @@
         {% import 'macros.html' as macro%}
 
         <div class="one">
+            <div class="col-md-6">
                 <form>
                     <input type="text" name="movie_query" placeholder="Search for news" class="form-control">
                     <input type="submit"  value="Submit" class="btn btn-default">
                 </form>
-            
             </div>
+        </div>
+            <br>
     
     <div>
+        <br>
+        <br>
+        <br>
     <h3> General news</h3>
      <ul>
         {% for source in business %}
@@ -47,7 +52,7 @@
             <li>category: {{sport_sources.category}}</li>
             <li>language: {{sport_sources.language}}</li>
             <li>Country: {{sport_sources.country}}</li> 
-            <a href="/articles/{{sport_sources.name}}" class="btn btn-primary">View</a>
+            <a href="/articles/{{sport_sources.id}}" class="btn btn-primary">View</a>
         </div>
       </div>
 </div>
@@ -66,7 +71,7 @@
             <li>category: {{entertainment_sources.category}}</li>
             <li>language: {{entertainment_sources.language}}</li>
             <li>Country:{{entertainment_sources.country}}</li> 
-            <a href="/articles/{{entertainment_sources.name}}" class="btn btn-primary">View</a>
+            <a href="/articles/{{entertainment_sources.id}}" class="btn btn-primary">View</a>
         </div>
       </div>
 </div>

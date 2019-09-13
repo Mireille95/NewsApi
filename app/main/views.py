@@ -44,38 +44,3 @@ def source(id):
 
 
 
-
-
-
-# from flask import render_template
-
-# from .request import get_sources
-# from .request import get_sources,get_source,search_sources
-# from flask import render_template,request,redirect,url_for
-# from .models import reviews
-# from .forms import ReviewForm
-# Review = reviews.Review
-
-# # Views
-# @main.route('/')
-# def index():
-
-#     '''
-#     View root page function that returns the index page and its data
-#     '''
-
-#     # Getting popular source
-#     popular_sources = get_sources('popular')
-#     upcoming_source = get_sources('upcoming')
-#     now_showing_source = get_sources('now_playing')
-
-#     title = 'Home - Welcome to The best source Review Website Online'
-
-#     search_sources = request.args.get('source_query')
-
-#     if search_sources:
-#         return redirect(url_for('search',source_name=search_sources))
-#     else:
-#         return render_template('index.html', title = title, popular = popular_sources, upcoming = upcoming_source, now_showing = now_showing_source )
-
-

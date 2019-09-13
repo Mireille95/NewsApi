@@ -2,7 +2,6 @@ import urllib.request,json
 from .models import Sources,Articles
 
 api_key = None
-
 base_url = None
 base_url_articles = None
 
@@ -116,6 +115,6 @@ def search_sources(movie_name):
             search_sources_results = process_results(search_sources_list)
 
 
-    return search_source_results
+    return search_sources_results
 
     # "https://newsapi.org/v2/sources?language&category={}&apiKey={}"
