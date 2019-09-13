@@ -1,0 +1,93 @@
+{% extends 'base.html'%}
+
+{%block content%}
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    {% endblock %}
+<div class="container">
+        {% import 'macros.html' as macro%}
+
+        <div class="one">
+                <form>
+                    <input type="text" name="movie_query" placeholder="Search for news" class="form-control">
+                    <input type="submit"  value="Submit" class="btn btn-default">
+                </form>
+            
+            </div>
+    
+    <div>
+    <h3> General news</h3>
+     <ul>
+        {% for source in business %}
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="card">
+                  <div class="card-heading" style=color:black;font-size:18px;">{{source.name}}</div>
+                  <div class="card-body">
+                    <p>{{source.description | truncate(100)}}</p>
+                    <li>category: {{source.category}}</li>
+                    <li>language: {{source.language}}</li>
+                    <li>Country: {{source.country}}</li>
+                    <a href="/articles/{{source.id}}" class="btn btn-primary">View</a>
+                  </div>
+                </div>
+        </div>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <h3> Sport news</h3>
+     <ul>
+        {% for sport_sources in sports %}
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <div class="card">
+                <div class="card-heading" style=color:black;font-size:18px;">{{sport_sources.name}}</div>
+                <div class="card-body">
+        <p>{{sport_sources.description| truncate(100)}}</p>
+            <li>category: {{sport_sources.category}}</li>
+            <li>language: {{sport_sources.language}}</li>
+            <li>Country: {{sport_sources.country}}</li> 
+            <a href="/articles/{{sport_sources.name}}" class="btn btn-primary">View</a>
+        </div>
+      </div>
+</div>
+            {% endfor %}
+    </ul>
+</div>
+<div>
+    <h3> Entertainment news</h3>
+     <ul>
+        {% for entertainment_sources in entertainment %}
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="card">
+                    <div class="card-heading" style=color:black;font-size:18px;">{{entertainment_sources.name}}</div>
+                    <div class="card-body">
+            <p>Description:{{entertainment_sources.description| truncate(100) }}</p>
+            <li>category: {{entertainment_sources.category}}</li>
+            <li>language: {{entertainment_sources.language}}</li>
+            <li>Country:{{entertainment_sources.country}}</li> 
+            <a href="/articles/{{entertainment_sources.name}}" class="btn btn-primary">View</a>
+        </div>
+      </div>
+</div>
+            {% endfor %}
+    </ul>
+  </div>
+</div>
+<!--    
+            <h1>Entertainment News</h1>
+            <ul>
+                {% for source in entertainment %}
+                    <li><h3>Name: {{ source.name }}</h3></li>
+                    <li>ID: {{ source.id }}</li>
+                    <li>Description: {{ source.description }}</li>
+                    <li>Url: {{ source.url }}</li>
+                    <li>Category: {{ source.category }}</li>
+                    <li>Language: {{ source.language }}</li>
+                    <li>Country: {{ source.country }}</li>
+                {% endfor %}
+            </ul>
+          -->
+         
+
+<!-- {% endblock %} -->
