@@ -6,12 +6,12 @@
     {% endblock %}
 <ul>
 {%for article in articles %}
-<div class="row">
+<div class= "row">
+    <h1><a href="{{article.url}}">{{article.title}}</a></h1>
+    <p><img src="{{article.urlToImage}}" class="img-fluid"/></p>
 
-<h1><a href="{{article.url}}">{{articles.title}}</a></h1>
-<p><img src="{{article.urlToImage}}" class="img-fluid"/></p>
-<h3>source: {{article.source.name}} Titlee:{{article.title}} Author: {{article.author }} </h3>
-<p>description:{{article.description}}</p>
+    <h3>source: {{article.source.name}} Titlee:{{article.title}} Author: {{article.author }} </h3>
+    <p>description:{{article.description}}</p>
 
 </div>
 
